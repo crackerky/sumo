@@ -1,0 +1,969 @@
+/* ============================================
+   SUMO Cultural Web Project - Styles
+   Color Palette:
+   - Black: #333C3D (Strength, Tradition)
+   - White: #E5E0D6 (Purity, Ritual)
+   - Red: #96320E (Dohyo, Sacred)
+   - Blue: #496199 (Stability)
+   - Purple: #765291 (Prestige, Divinity)
+   ============================================ */
+
+/* === CSS Variables === */
+:root {
+    --color-black: #333C3D;
+    --color-white: #E5E0D6;
+    --color-red: #96320E;
+    --color-blue: #496199;
+    --color-purple: #765291;
+
+    --font-primary: 'Open Sans', sans-serif;
+    --font-headings: 'Montserrat', sans-serif;
+    --font-japanese: 'Noto Sans JP', sans-serif;
+
+    --transition: all 0.3s ease;
+}
+
+/* === Reset & Base Styles === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-black);
+    background-color: var(--color-white);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* === Container === */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* === Navigation === */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(51, 60, 61, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: var(--transition);
+}
+
+.navbar.scrolled {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-japanese);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-white);
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--color-white);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-red);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-white);
+    transition: var(--transition);
+}
+
+/* === Hero Section === */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-black) 0%, var(--color-purple) 100%);
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23765291" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-size: cover;
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-title {
+    font-family: var(--font-japanese);
+    font-size: 6rem;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+    letter-spacing: 8px;
+}
+
+.hero-title span {
+    font-family: var(--font-headings);
+    font-size: 3rem;
+    display: block;
+    margin-top: 1rem;
+    letter-spacing: 12px;
+    font-weight: 300;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--color-white);
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-white);
+    opacity: 0.7;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator span {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 40px;
+    background-color: var(--color-white);
+}
+
+/* === Section Styles === */
+.section {
+    padding: 6rem 0;
+    position: relative;
+}
+
+.section:nth-child(even) {
+    background-color: #f8f7f3;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-tag {
+    display: inline-block;
+    color: var(--color-red);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    color: var(--color-black);
+    margin-bottom: 1rem;
+}
+
+/* === What is Sumo Section === */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.content-text .lead {
+    font-size: 1.25rem;
+    color: var(--color-purple);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.content-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+.image-placeholder {
+    background: linear-gradient(135deg, var(--color-blue), var(--color-purple));
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: 1.1rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* === Sacred Rituals Section === */
+.rituals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.ritual-card {
+    background-color: white;
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.ritual-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(150, 50, 14, 0.15);
+}
+
+.ritual-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.ritual-card h3 {
+    color: var(--color-red);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.ritual-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* === The Basics Section === */
+.basics-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.basics-main h3,
+.basics-rules h3 {
+    color: var(--color-purple);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.win-conditions {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.condition {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-red);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.condition-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-red);
+    opacity: 0.3;
+    margin-bottom: 0.5rem;
+}
+
+.condition h4 {
+    color: var(--color-black);
+    margin-bottom: 0.5rem;
+}
+
+.rules-list {
+    list-style: none;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.rules-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.05rem;
+}
+
+.rules-list li:last-child {
+    border-bottom: none;
+}
+
+.dohyo-diagram {
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dohyo-diagram h3 {
+    color: var(--color-purple);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.dohyo-circle {
+    width: 300px;
+    height: 300px;
+    margin: 2rem auto;
+    border-radius: 50%;
+    border: 8px solid var(--color-red);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #fff, var(--color-white));
+}
+
+.dohyo-circle p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-red);
+    margin-bottom: 0.5rem;
+}
+
+.dohyo-circle span {
+    font-size: 1rem;
+    color: #666;
+}
+
+.diagram-note {
+    margin-top: 1.5rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* === Legends Section === */
+.legends-grid {
+    display: grid;
+    gap: 3rem;
+}
+
+.legend-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    transition: var(--transition);
+}
+
+.legend-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.legend-image .image-placeholder {
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-blue), var(--color-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.legend-info {
+    padding: 2.5rem;
+}
+
+.legend-info h3 {
+    color: var(--color-black);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.rank {
+    display: inline-block;
+    color: var(--color-red);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.legend-info p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.stats {
+    display: flex;
+    gap: 3rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-purple);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* === Sumo Life Section === */
+.life-timeline {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    position: relative;
+}
+
+.life-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-red);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-marker {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border: 3px solid var(--color-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    z-index: 2;
+}
+
+.timeline-content {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    flex: 1;
+}
+
+.timeline-content h3 {
+    color: var(--color-purple);
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+}
+
+.timeline-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.heya-info {
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.heya-info h3 {
+    color: var(--color-red);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.heya-info p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* === Watch Live Section === */
+.honbasho-info {
+    margin-bottom: 4rem;
+}
+
+.honbasho-info h3 {
+    color: var(--color-purple);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.honbasho-info .lead {
+    font-size: 1.15rem;
+    color: #555;
+    margin-bottom: 3rem;
+}
+
+.tournament-schedule {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.tournament-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    border-top: 4px solid var(--color-red);
+}
+
+.tournament-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(150, 50, 14, 0.2);
+}
+
+.month {
+    color: var(--color-red);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.tournament-card h4 {
+    color: var(--color-black);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.location {
+    color: #666;
+    font-size: 1rem;
+}
+
+.ticket-info {
+    background: linear-gradient(135deg, var(--color-purple), var(--color-blue));
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+
+.ticket-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.ticket-info p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === Beyond the Ring Section === */
+.beyond-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.beyond-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.beyond-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.beyond-card h3 {
+    color: var(--color-red);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.beyond-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* === Gallery Section === */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.gallery-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-item .image-placeholder {
+    height: 250px;
+    background: linear-gradient(135deg, var(--color-blue), var(--color-purple));
+    transition: var(--transition);
+}
+
+.gallery-item.large .image-placeholder {
+    height: 100%;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item:hover .image-placeholder {
+    opacity: 0.9;
+}
+
+/* === CTA Section === */
+.cta-section {
+    background: linear-gradient(135deg, var(--color-black), var(--color-purple));
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* === Buttons === */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: var(--color-red);
+    color: white;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+    box-shadow: 0 5px 15px rgba(150, 50, 14, 0.3);
+}
+
+.cta-button:hover {
+    background-color: #7a2609;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(150, 50, 14, 0.4);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.cta-button.secondary:hover {
+    background-color: white;
+    color: var(--color-red);
+}
+
+/* === Footer === */
+.footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-brand h3 {
+    font-family: var(--font-japanese);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-white);
+}
+
+.footer-brand p {
+    color: rgba(229, 224, 214, 0.7);
+    line-height: 1.6;
+}
+
+.footer-links h4,
+.footer-resources h4 {
+    color: var(--color-red);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-links ul,
+.footer-resources ul {
+    list-style: none;
+}
+
+.footer-links li,
+.footer-resources li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a,
+.footer-resources a {
+    color: rgba(229, 224, 214, 0.8);
+    transition: var(--transition);
+}
+
+.footer-links a:hover,
+.footer-resources a:hover {
+    color: var(--color-red);
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(229, 224, 214, 0.2);
+    color: rgba(229, 224, 214, 0.6);
+}
+
+/* === Animations === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* === Responsive Design === */
+@media (max-width: 968px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--color-black);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-title span {
+        font-size: 2rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .basics-content {
+        grid-template-columns: 1fr;
+    }
+
+    .legend-card {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-title span {
+        font-size: 1.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item.large {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
