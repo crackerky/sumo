@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   日本の伝統美 - 余白と静けさを大切に
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-kinari text-sumi font-body;
+  line-height: 2;
+  letter-spacing: 0.05em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 縦書き */
+.tategaki {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* ========================================
+   コンポーネント
+   ======================================== */
+@layer components {
+
+  /* セクションタグ - 控えめに */
+  .section-tag {
+    @apply inline-block text-shu text-xs tracking-[0.25em] uppercase font-medium;
+    letter-spacing: 0.25em;
+  }
+
+  /* 見出し - 明朝体で品よく */
+  .section-title {
+    @apply text-3xl md:text-4xl font-japanese font-medium text-sumi tracking-wide;
+    line-height: 1.5;
+  }
+
+  /* 朱の線 - シンプルに */
+  .shu-line {
+    @apply w-12 h-px bg-shu;
+  }
+
+  /* ボタン - 控えめなデザイン */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 bg-sumi text-kinari text-sm tracking-wider transition-all duration-300;
+  }
+  .btn-primary:hover {
+    @apply bg-sumi/80;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-3 border border-sumi text-sumi text-sm tracking-wider transition-all duration-300;
+  }
+  .btn-outline:hover {
+    @apply bg-sumi text-kinari;
+  }
+
+  /* カード - 白を基調に */
+  .card {
+    @apply bg-gofun;
+  }
+
+  /* 朱印風 */
+  .stamp {
+    @apply inline-block px-2 py-0.5 border border-shu text-shu font-japanese text-xs;
+  }
+}
+
+/* ========================================
+   スクロールバー
+   ======================================== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-kinari;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-sumi/20;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-sumi/40;
+}
+
+/* 選択時 */
+::selection {
+  @apply bg-shu/10 text-sumi;
+}
