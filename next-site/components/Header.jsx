@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 const navItems = [
@@ -46,9 +47,15 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-japanese text-2xl tracking-wider text-sumi hover:text-shu transition-colors"
+            className="relative w-12 h-12 hover:opacity-80 transition-opacity"
           >
-            相撲
+            <Image
+              src="/logo.png"
+              alt="Sumo"
+              fill
+              className="object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
