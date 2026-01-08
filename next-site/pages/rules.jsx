@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import PageHero from '../components/PageHero'
-import CinematicSection, { FadeInText, ImagePlaceholder } from '../components/CinematicSection'
+import CinematicSection, { FadeInText, SumoImage } from '../components/CinematicSection'
 
 export default function RulesPage() {
   return (
@@ -67,7 +67,7 @@ export default function RulesPage() {
             </p>
           </FadeInText>
           <FadeInText delay={0.2}>
-            <ImagePlaceholder label="Throwing Technique" aspect="square" />
+            <SumoImage src="/kimarite.jpg" alt="Sumo Throwing Technique" aspect="square" />
           </FadeInText>
         </div>
       </CinematicSection>

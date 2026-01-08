@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import PageHero from '../components/PageHero'
-import CinematicSection, { FadeInText, ImagePlaceholder } from '../components/CinematicSection'
+import CinematicSection, { FadeInText, SumoImage } from '../components/CinematicSection'
 
 const schedule = [
   {
@@ -130,7 +130,7 @@ export default function LifePage() {
             </p>
           </FadeInText>
           <FadeInText delay={0.2}>
-            <ImagePlaceholder label="Sumo Stable" aspect="square" />
+            <SumoImage src="/heya.jpg" alt="Sumo Stable Living Quarters" aspect="video" />
           </FadeInText>
         </div>
       </CinematicSection>
@@ -139,7 +139,7 @@ export default function LifePage() {
       <CinematicSection bg="kinari">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <FadeInText className="lg:order-2">
-            <ImagePlaceholder label="Chanko Nabe" aspect="square" />
+            <SumoImage src="/chanko.jpg" alt="Chanko Nabe Hot Pot" aspect="video" />
           </FadeInText>
           <FadeInText delay={0.2} className="lg:order-1">
             <span className="text-sm tracking-[0.3em] uppercase text-shu mb-6 block">Fuel</span>
