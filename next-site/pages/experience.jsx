@@ -101,7 +101,7 @@ export default function ExperiencePage() {
             </p>
           </FadeInText>
           <FadeInText delay={0.2}>
-            <SumoImage src="/kokugikan.jpg" alt="Ryogoku Kokugikan Arena" aspect="square" />
+            <SumoImage src="/kokugikan.jpg" alt="Ryogoku Kokugikan Arena" aspect="portrait" />
           </FadeInText>
         </div>
       </CinematicSection>

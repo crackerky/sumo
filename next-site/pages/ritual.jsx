@@ -37,7 +37,7 @@ export default function RitualPage() {
             </p>
           </FadeInText>
           <FadeInText delay={0.3}>
-            <SumoImage src="/kokugikan.jpg" alt="Ryogoku Kokugikan Arena" aspect="wide" className="max-w-4xl mx-auto" />
+            <SumoImage src="/kokugikan.jpg" alt="Ryogoku Kokugikan Arena" aspect="portrait" className="max-w-2xl mx-auto" />
           </FadeInText>
         </div>
       </CinematicSection>
@@ -46,7 +46,7 @@ export default function RitualPage() {
       <CinematicSection bg="kinari">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <FadeInText>
-            <SumoImage src="/salt-throwing.jpg" alt="Salt Throwing Ritual" aspect="square" />
+            <SumoImage src="/salt-throwing.jpg" alt="Salt Throwing Ritual" aspect="video" />
           </FadeInText>
           <FadeInText delay={0.2}>
             <span className="text-sm tracking-[0.3em] uppercase text-shu mb-6 block">Purification</span>
@@ -72,7 +72,7 @@ export default function RitualPage() {
       <CinematicSection bg="gofun">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <FadeInText className="lg:order-2">
-            <SumoImage src="/ring-ceremony.jpg" alt="Ring Entering Ceremony" aspect="portrait" />
+            <SumoImage src="/ring-ceremony.jpg" alt="Ring Entering Ceremony" aspect="video" />
           </FadeInText>
           <FadeInText delay={0.2} className="lg:order-1">
             <span className="text-sm tracking-[0.3em] uppercase text-shu mb-6 block">The Stomp</span>
@@ -116,7 +116,7 @@ export default function RitualPage() {
             </p>
           </FadeInText>
           <FadeInText delay={0.3}>
-            <SumoImage src="/yokozuna-dohyo-iri.jpg" alt="Yokozuna Dohyo-iri Ceremony" aspect="video" className="max-w-4xl mx-auto" />
+            <SumoImage src="/yokozuna-dohyo-iri.jpg" alt="Yokozuna Dohyo-iri Ceremony" aspect="portrait" className="max-w-2xl mx-auto" />
           </FadeInText>
         </div>
       </CinematicSection>

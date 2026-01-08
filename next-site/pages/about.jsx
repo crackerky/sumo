@@ -34,7 +34,7 @@ export default function AboutPage() {
             </p>
           </FadeInText>
           <FadeInText delay={0.2}>
-            <SumoImage src="/ukiyoe-wrestlers.jpg" alt="Ancient Sumo Ukiyo-e" aspect="square" />
+            <SumoImage src="/ukiyoe-wrestlers.jpg" alt="Ancient Sumo Ukiyo-e" aspect="video" />
           </FadeInText>
         </div>
       </CinematicSection>
