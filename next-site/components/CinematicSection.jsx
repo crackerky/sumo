@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function CinematicSection({
   children,
@@ -93,6 +94,33 @@ export function ImagePlaceholder({ label, className = '', aspect = 'video' }) {
       className={`${aspectClasses[aspect]} bg-shironeri flex items-center justify-center ${className}`}
     >
       <span className="text-lg md:text-xl font-japanese text-sumi/20">{label}</span>
+    </motion.div>
+  )
+}
+
+export function SumoImage({ src, alt, className = '', aspect = 'video' }) {
+  const aspectClasses = {
+    video: 'aspect-video',
+    square: 'aspect-square',
+    portrait: 'aspect-[3/4]',
+    wide: 'aspect-[21/9]',
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.98 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: '-10%' }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+      className={`${aspectClasses[aspect]} relative overflow-hidden ${className}`}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
     </motion.div>
   )
 }

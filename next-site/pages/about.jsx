@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import PageHero from '../components/PageHero'
-import CinematicSection, { FadeInText, ImagePlaceholder } from '../components/CinematicSection'
+import CinematicSection, { FadeInText, SumoImage } from '../components/CinematicSection'
 
 export default function AboutPage() {
   return (
@@ -34,7 +34,7 @@ export default function AboutPage() {
             </p>
           </FadeInText>
           <FadeInText delay={0.2}>
-            <ImagePlaceholder label="Ancient Sumo Scroll" aspect="square" />
+            <SumoImage src="/ukiyoe-wrestlers.jpg" alt="Ancient Sumo Ukiyo-e" aspect="square" />
           </FadeInText>
         </div>
       </CinematicSection>
@@ -67,7 +67,7 @@ export default function AboutPage() {
       <CinematicSection bg="gofun">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <FadeInText delay={0.2} className="order-2 lg:order-1">
-            <ImagePlaceholder label="Rikishi Portrait" aspect="portrait" />
+            <SumoImage src="/yokozuna-illustration.jpg" alt="Yokozuna Illustration" aspect="portrait" />
           </FadeInText>
           <FadeInText className="order-1 lg:order-2">
             <span className="text-sm tracking-[0.3em] uppercase text-shu mb-6 block">The Wrestlers</span>

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import PageHero from '../components/PageHero'
-import CinematicSection, { FadeInText, ImagePlaceholder } from '../components/CinematicSection'
+import CinematicSection, { FadeInText, SumoImage } from '../components/CinematicSection'
 
 const tournaments = [
   { month: 'January', name: 'Hatsu Basho', japanese: '初場所', location: 'Tokyo', venue: 'Ryogoku Kokugikan' },
@@ -101,7 +101,7 @@ export default function ExperiencePage() {
             </p>
           </FadeInText>
           <FadeInText delay={0.2}>
-            <ImagePlaceholder label="Ryogoku Kokugikan" aspect="square" />
+            <SumoImage src="/kokugikan.jpg" alt="Ryogoku Kokugikan Arena" aspect="square" />
           </FadeInText>
         </div>
       </CinematicSection>

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import PageHero from '../components/PageHero'
-import CinematicSection, { FadeInText, ImagePlaceholder } from '../components/CinematicSection'
+import CinematicSection, { FadeInText, SumoImage } from '../components/CinematicSection'
 
 const legends = [
   {
@@ -13,6 +13,7 @@ const legends = [
     era: '1981-1991',
     titles: 31,
     nickname: 'The Wolf',
+    image: '/chiyonofuji.jpg',
     description: 'At just 120kg, Chiyonofuji was small for a yokozuna, but his technical brilliance and fierce determination made him unstoppable. His signature throw, the uwatenage, was poetry in motion. He won 31 tournament championships and is considered one of the greatest athletes in Japanese history.'
   },
   {
@@ -21,6 +22,7 @@ const legends = [
     era: '2007-2021',
     titles: 45,
     nickname: 'The GOAT',
+    image: '/hakuho.jpg',
     description: 'The most successful yokozuna in history. Born in Mongolia, Hakuho dominated sumo for over a decade, breaking virtually every record in the sport. His 45 tournament victories and 1,187 career wins may never be surpassed. A master of both power and technique.'
   },
   {
@@ -29,6 +31,7 @@ const legends = [
     era: '1961-1971',
     titles: 32,
     nickname: 'The Giant',
+    image: '/taiho.jpg',
     description: 'Before Hakuho, Taiho was the benchmark of greatness. Competing during sumo\'s golden age, he won 32 championships and became a national hero. His rivalry with Kashiwado defined an era. His name became synonymous with excellence in Japan.'
   },
   {
@@ -37,6 +40,7 @@ const legends = [
     era: '2021-Present',
     titles: 10,
     nickname: 'The Comeback King',
+    image: '/terunofuji.jpg',
     description: 'The most remarkable comeback story in sumo history. After reaching ozeki, injuries forced him to the bottom division. Through sheer will, he climbed back to become the 73rd yokozuna—the only wrestler ever to do so. His story embodies the spirit of never giving up.'
   }
 ]
@@ -79,7 +83,7 @@ export default function LegendsPage() {
         <CinematicSection key={legend.romaji} bg={index % 2 === 0 ? 'kinari' : 'gofun'}>
           <div className={`grid lg:grid-cols-2 gap-16 lg:gap-24 items-center ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
             <FadeInText className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-              <ImagePlaceholder label={`${legend.romaji} Portrait`} aspect="portrait" />
+              <SumoImage src={legend.image} alt={`${legend.romaji} Portrait`} aspect="portrait" />
             </FadeInText>
             <FadeInText delay={0.2} className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
               <span className="text-sm tracking-[0.3em] uppercase text-shu mb-4 block">{legend.era}</span>
