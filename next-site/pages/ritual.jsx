@@ -116,7 +116,7 @@ export default function RitualPage() {
             </p>
           </FadeInText>
           <FadeInText delay={0.3}>
-            <SumoImage src="/yokozuna-dohyo-iri.jpg" alt="Yokozuna Dohyo-iri Ceremony" aspect="portrait" className="max-w-2xl mx-auto" />
+            <SumoImage src="/yokozuna-dohyo-iri.jpg" alt="Yokozuna Dohyo-iri Ceremony" aspect="portrait" position="top" className="max-w-2xl mx-auto" />
           </FadeInText>
         </div>
       </CinematicSection>

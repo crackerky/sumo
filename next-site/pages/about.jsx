@@ -67,7 +67,7 @@ export default function AboutPage() {
       <CinematicSection bg="gofun">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <FadeInText delay={0.2} className="order-2 lg:order-1">
-            <SumoImage src="/yokozuna-illustration.jpg" alt="Yokozuna Illustration" aspect="portrait" />
+            <SumoImage src="/yokozuna-illustration.jpg" alt="Yokozuna Illustration" aspect="portrait" position="top" />
           </FadeInText>
           <FadeInText className="order-1 lg:order-2">
             <span className="text-sm tracking-[0.3em] uppercase text-shu mb-6 block">The Wrestlers</span>

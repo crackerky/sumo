@@ -83,7 +83,7 @@ export default function LegendsPage() {
         <CinematicSection key={legend.romaji} bg={index % 2 === 0 ? 'kinari' : 'gofun'}>
           <div className={`grid lg:grid-cols-2 gap-16 lg:gap-24 items-center ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
             <FadeInText className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-              <SumoImage src={legend.image} alt={`${legend.romaji} Portrait`} aspect="portrait" />
+              <SumoImage src={legend.image} alt={`${legend.romaji} Portrait`} aspect="portrait" position="top" />
             </FadeInText>
             <FadeInText delay={0.2} className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
               <span className="text-sm tracking-[0.3em] uppercase text-shu mb-4 block">{legend.era}</span>

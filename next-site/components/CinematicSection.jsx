@@ -98,12 +98,18 @@ export function ImagePlaceholder({ label, className = '', aspect = 'video' }) {
   )
 }
 
-export function SumoImage({ src, alt, className = '', aspect = 'video' }) {
+export function SumoImage({ src, alt, className = '', aspect = 'video', position = 'center' }) {
   const aspectClasses = {
     video: 'aspect-video',
     square: 'aspect-square',
     portrait: 'aspect-[3/4]',
     wide: 'aspect-[21/9]',
+  }
+
+  const positionClasses = {
+    top: 'object-top',
+    center: 'object-center',
+    bottom: 'object-bottom',
   }
 
   return (
@@ -118,7 +124,7 @@ export function SumoImage({ src, alt, className = '', aspect = 'video' }) {
         src={src}
         alt={alt}
         fill
-        className="object-cover"
+        className={`object-cover ${positionClasses[position]}`}
         sizes="(max-width: 768px) 100vw, 50vw"
       />
     </motion.div>
