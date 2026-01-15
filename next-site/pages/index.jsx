@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import Layout from '../components/Layout'
 
 export default function Home() {
@@ -9,12 +10,15 @@ export default function Home() {
     <Layout showFooter={false}>
       {/* Full-screen Hero */}
       <section className="relative min-h-screen flex items-center justify-center bg-kinari overflow-hidden">
-        {/* Subtle background pattern */}
-        <div className="absolute inset-0 opacity-[0.015]">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #1C1C1C 1px, transparent 0)`,
-            backgroundSize: '48px 48px'
-          }} />
+        {/* Background sumo image */}
+        <div className="absolute inset-0 opacity-[0.15]">
+          <Image
+            src="/sumo.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
 
         <div className="relative z-10 text-center px-6">
